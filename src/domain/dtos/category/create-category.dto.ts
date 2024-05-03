@@ -4,7 +4,7 @@
 export class CreateCategoryDto {
     constructor(
         public name:string,
-        public available:boolean,
+        public available?:boolean,
        
     ) {}
 

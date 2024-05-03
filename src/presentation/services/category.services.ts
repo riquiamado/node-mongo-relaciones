@@ -21,12 +21,13 @@ export class CategoryService {
     try {
       const category = new CategoryModel({
         ...createCategoryDto,
-        user: user.id,
+        user:user.id
       })
       await category.save()
       const { ...categoryEntity } = CategoryEntity.fromObject(category)
       return {
-         ...categoryEntity
+         category,
+         user:category.user.id
       }
     //   return {
     //     id:category.id,
